@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html lg="pl">
+<head>
+     <meta charset="utf-8" />
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+	 <title>Strona główna</title>
+	 <meta name="description" content="Podstrony" />
+	 <meta name ="keywords" content="podstorny" />
+	 <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="css/fontello.css" rel="stylesheet" type="text/css">
+	 
+	 <style>
+		body{
+			font-family: 'Roboto', sans-serif;
+			background-image: url("img/tlo.png");  /* This pattern is downloaded from www.subtlepatterns.com */
+		}
+		.title{
+			border-bottom: #2F2E2E dashed 2px;
+			color:#2F2E2E;
+			width:100%;
+			text-align:center;
+			font-size:35px;
+			letter-spacing:3px;
+			word-spacing:6px;
+		}
+		.menu{
+			font-size:35px;
+			margin-top:80px;
+			width:300px;
+			margin-left:auto;
+			margin-right:auto;
+			background-color:#A09D9D;
+			color:#0A0A0A;
+		}
+		ol{
+			text-decoration:none;
+			list-style-type:none;
+			padding: 0;
+			margin:0;
+		}
+		ol > li{
+			padding:20px;
+		}
+		ol> li:hover{
+			color:#B6B6B6;
+			background-color:#292929
+		}
+		ul {
+			list-style-type:none;
+			padding:0;
+			margin:0;
+			text-align:center;
+			display:none;
+		}
+		ul >li{
+			height: 84px;
+			line-height:225%;
+			border-bottom: dashed 2px #292929;
+		}
+		ul > li:first-child{
+			border-top: dashed 2px #292929
+		}
+		ul >li a{
+			color:#0A0A0A;
+			text-decoration:none;
+		}
+		ul> li:hover{
+			background-color:#292929
+		}
+		ul> li:hover a{
+			color:#B6B6B6;
+		}
+		ol:hover > ul {
+			display:block;
+		}
+		a{
+			display:block;
+		}
+	 </style> 
+	 
+</head>
+<body>
+	<div class="title">
+		<h1>Wybierz Podstrone</h1>
+	</div>
+	<div class="menu">
+		<ol >
+			<li>Podstrony  &nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-down-open"></i></li>
+				<ul>
+					<li><a href="Poryroku.html">Pory roku</a></li>
+					<li><a href="tabela.html">Tabele</a></li>
+					<li><a href="lista.html">Listy</a></li>
+			</ul>
+		</ol>
+		
+	</div>
+</body>
+</html>
