@@ -24,9 +24,9 @@
 		     var liczba = document.getElementById("pole").value;
 			 if(liczba<0) document.getElementById("wynik").innerHTML="ujemna";
 			 else if(liczba>0) document.getElementById("wynik").innerHTML="dodatnia";
-			 else if(liczba=="") document.getElementById("wynik").innerHTML="nic nie podałes debilu";
+			 else if(liczba=="") document.getElementById("wynik").innerHTML="nic nie podałes";
 			 else if(liczba==0) document.getElementById("wynik").innerHTML="zero";
-			 else  document.getElementById("wynik").innerHTML="to nie jest liczba dałnie";
+			 else  document.getElementById("wynik").innerHTML="to nie jest liczba";
 		}
 		
 		function policz()
@@ -34,14 +34,14 @@
 			var liczba1=document.getElementById("pole2").value;
 			var liczba2=document.getElementById("pole3").value;
 			var wynik="";
-			if(isNaN(liczba1) || isNaN(liczba2)) document.getElementById("wynik2").innerHTML="musisz mordeczko wpisac liczby";
+			if(isNaN(liczba1) || isNaN(liczba2)) document.getElementById("wynik2").innerHTML="musisz wpisac liczby";
 			else if(liczba1>liczba2){
 			for(i=liczba2; i<=liczba1;i++){
 				wynik=wynik+i+" ";
 			}
 			document.getElementById("wynik2").innerHTML=wynik;
 			}
-			else if(liczba1=="" || liczba2=="") document.getElementById("wynik2").innerHTML="Nic mordeczko nie wpisales";
+			else if(liczba1=="" || liczba2=="") document.getElementById("wynik2").innerHTML="Nic nie wpisales";
 			else{
 			for(i=liczba1; i<=liczba2;i++){
 				wynik=wynik+i+" ";
