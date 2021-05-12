@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+	<link href="css/fontello.css" rel="stylesheet" type="text/css">
+	<style>
+	.powrot a{
+		color:#B6B6B6;
+		text-decoration:none;
+	}
+	.powrot{
+		text-align:left;
+		color:#B6B6B6;
+		font-size:30px;
+		margin-left:20px;
+		margin-top:10px;
+	}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+
+	    function sprawdz()
+		{
+		     var liczba = document.getElementById("pole").value;
+			 if(liczba<0) document.getElementById("wynik").innerHTML="ujemna";
+			 else if(liczba>0) document.getElementById("wynik").innerHTML="dodatnia";
+			 else if(liczba=="") document.getElementById("wynik").innerHTML="nic nie podałes debilu";
+			 else if(liczba==0) document.getElementById("wynik").innerHTML="zero";
+			 else  document.getElementById("wynik").innerHTML="to nie jest liczba dałnie";
+		}
+		
+		function policz()
+		{
+			var liczba1=document.getElementById("pole2").value;
+			var liczba2=document.getElementById("pole3").value;
+			var wynik="";
+			if(isNaN(liczba1) || isNaN(liczba2)) document.getElementById("wynik2").innerHTML="musisz mordeczko wpisac liczby";
+			else if(liczba1>liczba2){
+			for(i=liczba2; i<=liczba1;i++){
+				wynik=wynik+i+" ";
+			}
+			document.getElementById("wynik2").innerHTML=wynik;
+			}
+			else if(liczba1=="" || liczba2=="") document.getElementById("wynik2").innerHTML="Nic mordeczko nie wpisales";
+			else{
+			for(i=liczba1; i<=liczba2;i++){
+				wynik=wynik+i+" ";
+			}
+			document.getElementById("wynik2").innerHTML=wynik;
+			}
+		}
+		
+		
+		var numer = Math.floor(Math.random()*5)+1;
+		
+		var timer1 = 0;
+		var timer2 = 0;
+		
+		function pokaz(nrslajdu){
+			clearTimeout(timer1);
+			clearTimeout(timer2);
+			numer = nrslajdu-1;
+			schowaj();			
+			setTimeout("zmienslajd()",500);
+		}
+		
+		function schowaj(){
+			$("#slider").fadeOut(500);
+		}
+		
+		function zmienslajd(){
+			numer++;
+			if(numer>5) numer=1;
+			
+			var plik="<img src=\"img/slajd"+numer+".jpg\">";
+			
+			document.getElementById("slider").innerHTML=plik;
+			$("#slider").fadeIn(400);
+			timer1 = setTimeout("zmienslajd()",5000);
+			timer2 = setTimeout("schowaj()",4500);
+		}
+	</script>
+	
+</head>
+<body onload="zmienslajd()">
+	<div class="powrot"><a href="index.html">Powrót do strony głównej<i class="icon-paper-plane"></a></i></div>
+	<br /> <br />
+    <input type="text" id="pole"/>
+	<input type="submit" value="Sprawdz" onclick="sprawdz()"/>
+	
+	<div id="wynik"></div>
+	<br /> <br />
+	<input type="text" id="pole2"/>
+	<input type="text" id="pole3"/>
+	<input type="submit" onclick="policz()"/>
+	<br /><br />
+	<span onclick="pokaz(1)" style="cursor:pointer;">[1]</span>
+	<span onclick="pokaz(2)" style="cursor:pointer;">[2]</span>
+	<span onclick="pokaz(3)" style="cursor:pointer;">[3]</span>
+	<span onclick="pokaz(4)" style="cursor:pointer;">[4]</span>
+	<span onclick="pokaz(5)" style="cursor:pointer;">[5]</span>
+	
+	<div id="wynik2"></div>
+	<br /> <br />
+	<div id="slider"></div>
+
+</body>
+</html>

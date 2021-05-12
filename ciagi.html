@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8"/>
+	<link href="css/fontello.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+	function obliczanie(){
+		var pierwszy =parseInt( document.getElementById("pierwszy").value);
+		var ilosc =parseInt( document.getElementById("ilosc").value);
+		var roznica = parseInt(document.getElementById("roznica").value);
+		var wynik=pierwszy;
+		var ciag="";
+		var ciag2="";
+		if(isNaN(pierwszy)) document.getElementById("wynik").innerHTML="Musisz podać pierwszy wyraz ciągu";
+		else if(isNaN(roznica)) document.getElementById("wynik").innerHTML="Musisz podać różnice w ciągu";
+		else
+		{
+			if(ilosc>0){
+			ciag=ciag+pierwszy;
+			ciag2=ciag2+ciag
+				for(i=0; i<ilosc-1; i++){
+					wynik=wynik+roznica;
+					ciag=ciag+", "+wynik;
+					ciag2=ciag2+", "+"<br />"+ciag;
+					document.getElementById("wynik").innerHTML=ciag;
+					document.getElementById("wynik").innerHTML=ciag+"<br /><br />"+ciag2;
+				}
+			}
+			else document.getElementById("wynik").innerHTML="Ilość wyrazów w ciągu musi być większa od zera";
+		}
+	}
+	</script>
+	<style>
+	body{
+		font-size:20px;
+		  font-weight:500;
+		  font-family: Arial;
+	}
+	.powrot{
+		text-align:left;
+		color:#B6B6B6;
+		font-size:30px;
+		margin-left:20px;
+		margin-top:10px;
+	}
+	.powrot a{
+		color:#B6B6B6;
+		text-decoration:none;
+	}
+	#button{
+	margin-top:20px;
+	width:200px;
+	height:50px;
+	font-size:20px;
+	}
+	</style>
+</head>
+<body >
+	<div class="powrot"><a href="index.html">Powrót do strony głównej<i class="icon-paper-plane"></a></i></div>
+	<br /> <br />
+	<div id="tekst" style="float:left;">
+	Pierwszy wyraz ciągu<br />
+	Ilość wyrazów w ciągu<br />
+	Różnica ciągu<br />
+	</div>
+	<div id="button" style="float:left; margin:0; margin-left:10px;">
+	<input type="number" id="pierwszy" placeholder=" " onfocus="this.placeholder = ''" onblur="this.placeholder = ''"/>
+	<input type="number" id="ilosc"/>
+	<input type="number" id="roznica"/>
+	</div>
+	<div style="clear:both;"></div>
+   
+   <input type="submit" id="button" value="Oblicz" onclick="obliczanie()"/>
+	<br /> <br />
+	<div id="wynik"></div>
+	
+	
+</body>
+</html>
